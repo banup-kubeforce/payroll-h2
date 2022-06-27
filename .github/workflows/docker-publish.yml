@@ -28,6 +28,9 @@ jobs:
         with:
           images: banupkubeforce/springcloudfunctions
 
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
