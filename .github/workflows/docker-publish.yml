@@ -47,3 +47,11 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Sync ArgoCD Application
+        uses: omegion/argocd-actions@v1
+        with:
+          address: "argocd.example.com"
+          token: ${{ secrets.ARGOCD_TOKEN }}
+          action: sync
+          appName: "payroll-h2"
