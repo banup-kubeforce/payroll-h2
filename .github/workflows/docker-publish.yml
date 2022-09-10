@@ -51,7 +51,7 @@ jobs:
       - name: Sync ArgoCD Application
         uses: omegion/argocd-actions@v1
         with:
-          address: "20.81.6.137"
+          address: "http://20.81.6.137"
           token: ${{ secrets.ARGOCD_TOKEN }}
           action: sync
           appName: "payroll-h2"
